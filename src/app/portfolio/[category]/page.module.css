@@ -2,38 +2,39 @@
   color: #53c28b;
 }
 
-.items {
+.item {
   display: flex;
-  align-items: center;
   gap: 50px;
   margin-top: 50px;
   margin-bottom: 100px;
 }
-.items:nth-child(2n + 1) {
+
+.item:nth-child(2n + 1) {
   flex-direction: row-reverse;
+}
+
+.imgContainer {
+  flex: 1;
+  height: 500px;
+  position: relative;
+}
+
+.img {
+  object-fit: cover;
 }
 
 .content {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 20px;
-}
-
-.imgcontainer {
-  flex: 1;
-  height: 500px;
-  position: relative;
-}
-
-.image {
-  object-fit: contain;
+  justify-content: center;
 }
 
 .title {
   font-size: 50px;
 }
-.description {
+
+.desc {
   font-size: 20px;
 }

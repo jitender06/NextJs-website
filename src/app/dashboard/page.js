@@ -1,26 +1,42 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import styles from "./page.module.css";
-import Image from "next/image";
+import useSWR from "swr";
+// import Image from "next/image";
 const Dashboard = () => {
+  // const [data, setData] = useState([]);
+  // const [err, setErr] = useState(false);
+  // const [isloading, setLoading] = useState(false);
+
+  // useEffect(() => {
+  //   const getData = async () => {
+  //     setLoading(true);
+  //     const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  //     if (!res.ok) {
+  //       err(true);
+  //     }
+  //     const data = await res.json();
+  //     setData(data);
+  //     setLoading(false);
+  //   };
+  //   getData();
+  // }, []);
+
+  // ////////./////./././.././/////  fetching data by swr method././././//////
+
+  const fetcher = (...args) => fetch(...args).then((res) => res.json());
+
+  const { data, error, isLoading } = useSWR(
+    "https://jsonplaceholder.typicode.com/posts",
+    fetcher
+  );
+
+  console.log(data);
+
   return (
     <div className={styles.container}>
-      <div className={styles.cardContainer}>
-        <div className={styles.imgContainer}>
-          <Image
-            src="/1.png"
-            alt="image"
-            fill={true}
-            className={styles.image}
-          />
-        </div>
-        <div className={styles.content}>
-          <h3 className={styles.text}>Free Training </h3>
-          <p className={styles.desc}>
-            We equip you with the knowledge and skills to confidently manage and
-            update your website, putting you in control of your online success.
-          </p>
-          <button className={styles.btn}>Contact</button>
-        </div>
+      <div>
+        <h1>hellow</h1>
       </div>
     </div>
   );

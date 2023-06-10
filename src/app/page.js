@@ -13,7 +13,10 @@ export default function Home() {
           Turning your ideas into reality. We bring together the teams from the
           global tech industry
         </p>
-        <Button url="/" text="See Our Website" />
+        <Button
+          url="https://jitender06.github.io/jitender.github.io/"
+          text="See Our Website"
+        />
       </div>
       <div className={styles.item}>
         <Image src={hero} alt="heroimage" className={styles.imagecontainer} />
